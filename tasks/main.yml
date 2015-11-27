@@ -1,0 +1,11 @@
+- name: install composer
+  command: "curl -sS https://getcomposer.org/installer | php"
+  args:
+    chdir: "{{ composer_install_dir }}"
+    creates: "{{ composer_install_dir }}/composer.phar"
+
+- name: create symlink
+  file:
+    src: "{{ composer_install_dir }}/composer.phar"
+    dest: "{{ composer_bin_location }}"
+    state: link
