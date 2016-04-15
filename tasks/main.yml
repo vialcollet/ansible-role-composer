@@ -13,7 +13,7 @@
     mode: 0755
 
 - name: install composer
-  command: "./installer"
+  command: "php installer"
   args:
     chdir: "{{ composer_install_dir }}"
     creates: "{{ composer_install_dir }}/composer.phar"
